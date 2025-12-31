@@ -12,6 +12,8 @@ class Animal:
             print(f"Eating {self.appetite} food points...")
             self.is_hungry = False
             return self.appetite
+        else:
+            return 0
 
 
 class Cat(Animal):
@@ -30,4 +32,4 @@ class Dog(Animal):
         print("The slippers delivered!")
 
 def feed_animals(hungry_animals: list):
-    return sum(hungry_animals, animal.feed)
+    return sum(animal.feed for animal in hungry_animals)
